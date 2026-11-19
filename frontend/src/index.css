@@ -1,0 +1,209 @@
+@import "tailwindcss";
+
+@theme {
+  --color-brand-50: #FFF5FA;
+  --color-brand-100: #F9E2EF;
+  --color-brand-200: #EED8E4;
+  --color-brand-600: #E000C8;
+  --color-brand-700: #C00090;
+  --color-slate-50: #FDF7FA;
+  --color-slate-100: #F9EEF4;
+  --color-slate-200: #EED8E4;
+  --color-slate-300: #D8B4C8;
+  --color-slate-400: #6E5865;
+  --color-slate-500: #6E5865;
+  --color-slate-600: #6E5865;
+  --color-slate-700: #1E161B;
+  --color-slate-800: #1E161B;
+  --color-slate-900: #1E161B;
+  --color-blue-50: #FFF5FA;
+  --color-blue-600: #C00090;
+  --color-blue-700: #C00090;
+  --color-emerald-50: #FFF5FA;
+  --color-emerald-100: #F9E2EF;
+  --color-emerald-500: #E000C8;
+  --color-emerald-700: #A00058;
+  --color-emerald-800: #A00058;
+  --color-amber-50: #FFF5FA;
+  --color-amber-100: #F9E2EF;
+  --color-amber-200: #EED8E4;
+  --color-amber-800: #A00058;
+  --color-amber-900: #A00058;
+  --color-rose-100: #F9E2EF;
+  --color-rose-800: #A00058;
+  --color-red-50: #FFF5FA;
+  --color-red-200: #EED8E4;
+  --color-red-600: #C00090;
+  --color-red-700: #A00058;
+}
+
+@layer base {
+  * { @apply box-border; --tw-shadow-color: rgb(144 0 60 / 0.08); }
+
+  body {
+    @apply m-0 min-w-80 bg-slate-50 font-sans text-slate-900 antialiased;
+  }
+}
+
+.min-h-screen {
+  --page-accent: #E000C8;
+  --page-accent-hover: #F21AD9;
+  --page-accent-tint: rgb(224 0 200 / 0.1);
+  background-color: #FDF7FA;
+}
+
+.min-h-screen[data-active-page='Upload Notice'] {
+  --page-accent: #C00090;
+  --page-accent-hover: #D60FA3;
+  --page-accent-tint: rgb(192 0 144 / 0.1);
+}
+
+.min-h-screen[data-active-page='Notice History'] {
+  --page-accent: #A00058;
+  --page-accent-hover: #B80D6B;
+  --page-accent-tint: rgb(160 0 88 / 0.1);
+}
+
+.min-h-screen[data-active-page='API Documentation'],
+.min-h-screen[data-active-page='Settings'] {
+  --page-accent: #90003C;
+  --page-accent-hover: #AB084B;
+  --page-accent-tint: rgb(144 0 60 / 0.1);
+}
+
+.min-h-screen > aside {
+  background-color: #90003C;
+  border-color: #A81450;
+}
+
+.min-h-screen > aside > div:first-child > div:first-child {
+  background: #E000C8;
+  color: #FFFFFF;
+}
+
+.min-h-screen > aside > div:first-child > div:last-child > p:first-child {
+  color: #FFFFFF;
+}
+
+.min-h-screen > aside > div:first-child > div:last-child > p:last-child {
+  color: rgb(255 255 255 / 0.78);
+}
+
+aside button:not([aria-current='page']) {
+  color: rgb(255 255 255 / 0.78);
+}
+
+aside button:not([aria-current='page']):hover {
+  background-color: rgb(255 255 255 / 0.12);
+  color: #FFFFFF;
+}
+
+aside button[aria-current='page'] {
+  background-color: #FFFFFF;
+  color: var(--page-accent);
+  box-shadow: 0 4px 14px rgb(0 0 0 / 0.18);
+}
+
+aside > div:last-child {
+  background-color: rgb(255 255 255 / 0.1);
+}
+
+aside > div:last-child p:first-child {
+  color: #FFFFFF;
+}
+
+aside > div:last-child p:last-child {
+  color: rgb(255 255 255 / 0.78);
+}
+
+main section,
+main > .grid:first-of-type > article,
+main > header > div:last-child {
+  background-color: #FFFFFF;
+  border-color: #EED8E4;
+  box-shadow: 0 6px 20px rgb(144 0 60 / 0.06);
+}
+
+main > header > div:first-child > p:first-child {
+  color: var(--page-accent);
+}
+
+main > header > div:last-child {
+  color: #1E161B;
+}
+
+main > header > div:last-child > span {
+  background-color: var(--page-accent);
+  box-shadow: 0 0 8px var(--page-accent);
+}
+
+main > .grid:first-of-type > article:first-child {
+  background: linear-gradient(135deg, var(--page-accent) 0%, #A00058 100%);
+  border-color: var(--page-accent);
+  box-shadow: 0 8px 24px rgb(144 0 60 / 0.18);
+}
+
+main > .grid:first-of-type > article:first-child p,
+main > .grid:first-of-type > article:first-child div {
+  color: #FFFFFF;
+}
+
+main > .grid:first-of-type > article:first-child > div > div:last-child {
+  background-color: rgb(255 255 255 / 0.18);
+  border: 1px solid rgb(255 255 255 / 0.22);
+}
+
+main > .grid:first-of-type > article:nth-child(2) > div > div:last-child {
+  background-color: rgb(224 0 200 / 0.1);
+  border: 1px solid rgb(224 0 200 / 0.22);
+  color: #E000C8;
+}
+
+main > .grid:first-of-type > article:nth-child(3) > div > div:last-child {
+  background-color: rgb(160 0 88 / 0.1);
+  border: 1px solid rgb(160 0 88 / 0.22);
+  color: #A00058;
+}
+
+main .space-y-6 > .scroll-mt-5:first-child > section > div:first-child > span {
+  background-color: rgb(192 0 144 / 0.08);
+  border: 1px solid rgb(192 0 144 / 0.25);
+  color: #C00090;
+}
+
+main .space-y-6 > .scroll-mt-5:first-child > section > div:nth-child(2) {
+  background-color: #F9EEF4;
+  border-color: #D8B4C8;
+}
+
+main .space-y-6 > .scroll-mt-5:first-child > section > div:nth-child(2):hover {
+  background-color: #FFF5FA;
+  border-color: var(--page-accent);
+}
+
+main .space-y-6 > .scroll-mt-5:first-child > section > div:nth-child(2) > div:first-child {
+  background-color: #FFFFFF;
+  border: 1px solid #EED8E4;
+  color: #C00090;
+  box-shadow: 0 4px 12px rgb(144 0 60 / 0.1);
+}
+
+main .space-y-6 > .scroll-mt-5:first-child > section button[class*='bg-brand-600'] {
+  background-color: var(--page-accent);
+  color: #FFFFFF;
+  box-shadow: 0 4px 14px rgb(224 0 200 / 0.3);
+}
+
+main .space-y-6 > .scroll-mt-5:first-child > section button[class*='bg-brand-600']:hover {
+  background-color: var(--page-accent-hover);
+}
+
+main .space-y-6 > .scroll-mt-5:first-child > section button:not([class*='bg-brand-600']) {
+  background-color: #FFFFFF;
+  border-color: var(--page-accent);
+  color: var(--page-accent);
+}
+
+main .space-y-6 > .scroll-mt-5:first-child > section button:not([class*='bg-brand-600']):hover {
+  background-color: var(--page-accent-tint);
+}
