@@ -5,10 +5,20 @@
   "buildCommand": "npm --prefix frontend run build",
   "outputDirectory": "frontend/dist",
   "functions": {
-    "app.py": {
+    "api/index.py": {
       "maxDuration": 300,
       "includeFiles": "backend/**",
       "excludeFiles": "{backend/tests/**,backend/scripts/**,database/**,frontend/**,**/__pycache__/**}"
     }
-  }
+  },
+  "rewrites": [
+    {
+      "source": "/api/:path*",
+      "destination": "/api/index"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ]
 }
